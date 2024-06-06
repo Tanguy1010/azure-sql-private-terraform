@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "spoke_rg" {
   name     = "spoke-networking-rg"
   location = var.location
-  tags = var.tags
+  tags     = var.tags
 }
 
 

@@ -15,7 +15,23 @@ output "sql_server_fqdn" {
 
 output "sql_connection_string_secret_name" {
   value       = azurerm_key_vault_secret.connection_string_sp.name
-  description = "Name of the SQL Server connection string secret"
+  description = "Name of the SQL Server connection string secret name"
+}
+
+output "sql_password_secret_name" {
+  value       = azurerm_key_vault_secret.sql_password.name
+  description = "Name of the SQL Server password secret name"
+}
+
+output "sql_admin_login" {
+  value       = azurerm_mssql_server.sql_server.administrator_login
+  description = "The SQL Server administrator login"
+}
+
+output "sql_admin_password" {
+  value       = random_password.sql_password.result
+  description = "The SQL Server administrator password"
+  sensitive   = true
 }
 
 output "sql_identity_id" {

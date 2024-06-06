@@ -11,13 +11,13 @@ variable "admin_user" {
 variable "hub_name" {
   description = "The name of the hub network"
   type        = string
-  default = "hub-networking"
+  default     = "hub-networking"
 }
 
 variable "spoke_name" {
   description = "The name of the spoke network"
   type        = string
-  default = "spoke-networking"
+  default     = "spoke-networking"
 }
 
 variable "sql_server_name" {

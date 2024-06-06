@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "hub_rg" {
   name     = "hub-networking-rg"
   location = var.location
-  tags = var.tags
+  tags     = var.tags
 }
 
 module "Hub" {

@@ -1,17 +1,17 @@
 resource "azurerm_resource_group" "sql_rg" {
   name     = "sql-rg"
   location = var.location
-  tags = var.tags
+  tags     = var.tags
 }
 
 module "sql_server_private" {
-  source                 = "./modules/sql-server"
-  name_prefix            = var.sql_server_name
-  resource_group_name    = azurerm_resource_group.sql_rg.name
-  location               = azurerm_resource_group.sql_rg.location
-  admin_login            = "MSSQLAdmin"
-  admin_users            = [var.admin_user]
-  key_vault_id           = azurerm_key_vault.keyvault_sql.id
+  source              = "./modules/sql-server"
+  name_prefix         = var.sql_server_name
+  resource_group_name = azurerm_resource_group.sql_rg.name
+  location            = azurerm_resource_group.sql_rg.location
+  admin_login         = "MSSQLAdmin"
+  admin_users         = [var.admin_user]
+  key_vault_id        = azurerm_key_vault.keyvault_sql.id
 
   public_network_access_enabled = false
 
